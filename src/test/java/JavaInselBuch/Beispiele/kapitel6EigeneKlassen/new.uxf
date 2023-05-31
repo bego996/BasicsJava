@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>60</y>
+      <w>250</w>
+      <h>340</h>
+    </coordinates>
+    <panel_attributes>Candy
+-
+name: String
+price: int
+quantity: int
+-
+name(name: String): Candy
+name(): String
+
+price (price: int): Candy
+price(): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>140</y>
+      <w>140</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Candy
+-
+name: String
+price: int
+quantity: int
+-
+totalPrice(): int
+resetQuantity(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>490</y>
+      <w>430</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>Passwort
+--
+-passwort: String = ""
+~name: String
+--
++assignNewPasswort(oldPasswort:String,new Passwort:String):void
++check(passwortTocheck:String):boolean
+_+delete(): String_
+name: String
+price: int
+quantity: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>520</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::FatClass
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
