@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class ElectronicDevices {
     private boolean isDeviceOn;
 
+    private double watt;
+
     public ElectronicDevices() {
     }
 
@@ -27,5 +29,17 @@ public class ElectronicDevices {
 
     boolean isOn() {
         return isDeviceOn;
+    }
+    public double getWatt() {
+        return watt;
+    }
+
+    public void setWatt(int watt) {
+        this.watt = watt;
+    }
+
+    @Override
+    public String toString() {
+        return "ElektronicDevice[watt= " +watt/1000+"kW]";
     }
 }

@@ -61,20 +61,17 @@ public class Main {
             }
 
         };
-
-
-
         Calendar date = Calendar.getInstance();
 
         date.set(Calendar.YEAR,2023);
 
-        date.set(Calendar.MONTH,Calendar.APRIL);
+        date.set(Calendar.MONTH,Calendar.JULY);
 
-        date.set(Calendar.DAY_OF_MONTH,14);
+        date.set(Calendar.DAY_OF_MONTH,8);
 
-        date.set(Calendar.HOUR_OF_DAY,21);
+        date.set(Calendar.HOUR_OF_DAY,16);
 
-        date.set(Calendar.MINUTE,44);
+        date.set(Calendar.MINUTE,45);
 
         date.set(Calendar.SECOND,0);
 
@@ -89,9 +86,5 @@ public class Main {
         //timer.scheduleAtFixedRate(task, 0, 1000);
 
         timer.scheduleAtFixedRate(task, date.getTime(), 1000);
-
     }
-
-
-
 }

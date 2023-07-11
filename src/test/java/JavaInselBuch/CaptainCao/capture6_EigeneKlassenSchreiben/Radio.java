@@ -73,8 +73,10 @@ public class Radio extends ElectronicDevices {
         this.maxFrequenzy = maxFrequenzy;
     }
 
+
+
     @Override
     public String toString() {
-        return String.format("Radio[volume=%d,frequency=%.1f,is %s,Modulation=%s", volume, frequency, electronicDevices.isOn() ? "On" : "Off", modulation);
+        return super.toString() +String.format("%nRadio[volume=%d,frequency=%.1f,is %s,Modulation=%s", volume, frequency, electronicDevices.isOn() ? "On" : "Off", modulation);
     }
 }

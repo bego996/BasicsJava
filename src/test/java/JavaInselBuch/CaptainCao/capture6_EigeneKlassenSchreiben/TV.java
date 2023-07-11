@@ -19,6 +19,6 @@ public class TV extends ElectronicDevices {
 
     @Override
     public String toString() {
-        return String.format("TV[On?=%s]", isOn());
+        return super.toString() +String.format("%nTV[On?=%s]", isOn());
     }
 }
