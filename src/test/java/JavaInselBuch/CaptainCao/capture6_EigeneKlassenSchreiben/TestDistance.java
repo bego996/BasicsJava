@@ -8,10 +8,14 @@ public class TestDistance {
         System.out.println(someMeter.meter());
         System.out.println();
 
+        //Statische Methoden vom interface können nur mit einem Objekt von Interface genutzt werden.
+
+
         DistanceImplementation distanceImplementation = new DistanceImplementation(1000);
         System.out.println(distanceImplementation.kilometer());
 
         System.out.printf("2 km = %d km, %d m%n",someMeter.kilometer(),someMeter.meter());
         System.out.printf("1000 m = %d km, %d m%n",oneKm.kilometer(),oneKm.meter());
+
     }
 }

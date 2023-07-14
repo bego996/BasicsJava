@@ -1,4 +1,4 @@
-package JavaInselBuch.Beispiele.StackUndQueue;
+package JavaInselBuch.Beispiele.stackUndQueue;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package JavaInselBuch.Beispiele.Vererbung;
+package JavaInselBuch.Beispiele.vererbung;
 
 public class Chiwava extends Hund {
     private boolean istLeicht;

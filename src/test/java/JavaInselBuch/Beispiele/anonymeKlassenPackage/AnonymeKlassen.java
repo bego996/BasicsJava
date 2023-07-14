@@ -33,14 +33,14 @@ public class AnonymeKlassen {
         // 2 Weg. Interface implementieren.
         //Anonyme Klasse wird erstellt die das Interface Lebewesen implementiert.
 
-
-        // Lebewesen dog = new Lebewesen() {       *//BeispielCode bis zeile 38.
-        //     @Override
-        //     public void macheEtwas() {
-        //      System.out.println("wufwuf");
-        //   }
-        //};
-        //rufeMethodeAuf(dog);
+//BeispielCode bis zeile 38.
+        Lebewesen dog = new Lebewesen() {
+             @Override
+             public void macheEtwas() {
+              System.out.println("wufwuf");
+           }
+        };
+        rufeMethodeAuf(dog);
 
 
         rufeMethodeAuf(new Lebewesen() { //Verkürzte version , Parameter Interface. Anwendung oft für GUIs.

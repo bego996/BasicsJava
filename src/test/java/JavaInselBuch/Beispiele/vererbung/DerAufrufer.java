@@ -1,4 +1,4 @@
-package JavaInselBuch.Beispiele.Vererbung;
+package JavaInselBuch.Beispiele.vererbung;
 
 public class DerAufrufer {
     public static void main(String[] args) {

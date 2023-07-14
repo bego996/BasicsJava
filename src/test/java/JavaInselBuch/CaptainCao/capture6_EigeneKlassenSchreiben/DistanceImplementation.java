@@ -1,6 +1,7 @@
 package JavaInselBuch.CaptainCao.capture6_EigeneKlassenSchreiben;
 
-public class DistanceImplementation implements Distance {
+//implementierung von zwei schnitstellen.
+public class DistanceImplementation implements Distance, JavaInselBuch.Beispiele.funktionaleInterfaceUndLamdas.Interface.HundInterface {
     private final int value;
 
     public DistanceImplementation(int value){
@@ -10,5 +11,17 @@ public class DistanceImplementation implements Distance {
     @Override
     public int meter() {
         return value;
+    }
+
+
+    //Hier nur test, wir sehen das man mehrere schnitstellen implementieren kann in einer klasse!
+    @Override
+    public void bellen() {
+
+    }
+
+    @Override
+    public void fressen() {
+
     }
 }
