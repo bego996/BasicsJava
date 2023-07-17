@@ -1,5 +1,7 @@
 package JavaInselBuch.CaptainCao.capture6_EigeneKlassenSchreiben;
 
+import JavaInselBuch.CaptainCao.Capture8_Exceptions.IlegalWattException;
+
 import java.util.ArrayList;
 
 public class ElectronicDevices {
@@ -34,7 +36,10 @@ public class ElectronicDevices {
         return watt;
     }
 
-    public void setWatt(int watt) {
+    public void setWatt(int watt) throws IlegalWattException {
+        if (watt <= 0){
+            throw new IlegalWattException();
+        }
         this.watt = watt;
     }
 

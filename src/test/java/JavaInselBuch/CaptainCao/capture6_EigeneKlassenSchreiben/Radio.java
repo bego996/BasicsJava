@@ -1,12 +1,16 @@
 package JavaInselBuch.CaptainCao.capture6_EigeneKlassenSchreiben;
 
 public class Radio extends ElectronicDevices {
+    public static enum Modulation{
+        AM,FM
+    }
     private final ElectronicDevices electronicDevices = new ElectronicDevices();
     int volume;
     private double frequency;
     private double minFrequenzy;
     private double maxFrequenzy;
-    private Modulation modulation;
+    private Modulation modulation = Modulation.AM;
+
 
     //Kontruktor
     public Radio() {
@@ -36,6 +40,7 @@ public class Radio extends ElectronicDevices {
         if (volume < 100)
             volume--;
     }
+
 
 
     public static double stationNameToFrequenzy(String senderName) {
@@ -72,7 +77,6 @@ public class Radio extends ElectronicDevices {
     public void setMaxFrequenzy(double maxFrequenzy) {
         this.maxFrequenzy = maxFrequenzy;
     }
-
 
 
     @Override

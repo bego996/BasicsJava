@@ -4,7 +4,21 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.function.Consumer;
 
-public class Application {
+public class ApplicationIncudeAlsoStaticAnonymAndLocalTypes {
+
+    //An example of the static inner class with an interface implementation.
+    public static class WattComparator implements Comparator<ElectronicDevices>{
+        @Override
+        public int compare(ElectronicDevices o1, ElectronicDevices o2) {
+            System.out.println(o1+ " is compared with "+ o2);
+            return Double.compare(o1.getWatt(), o2.getWatt());
+        }
+    }
+
+
+
+
+
     public static void main(String[] args) {
         Radio radio = new Radio();
         radio.on();
@@ -59,7 +73,37 @@ public class Application {
         System.out.println(ship1.getElectronicDevices().size());
         Consumer<ElectronicDevices> einTest = System.out::println;
         ship1.getElectronicDevices().forEach(einTest);
+        System.out.println();
 
+
+        //The static class usage.
+        WattComparator wattComparator = new WattComparator();
+        System.out.println(wattComparator.compare(radio1,radio2));
+        System.out.println();
+
+
+        //The local class usage, direct in the main method.
+        class WattComparator2 implements Comparator<ElectronicDevices>{
+            @Override
+            public int compare(ElectronicDevices o1, ElectronicDevices o2) {
+                System.out.println(o1+ " is compared with "+ o2);
+                return Double.compare(o1.getWatt(), o2.getWatt());
+            }
+        }
+        WattComparator2 testComparator = new WattComparator2();
+        System.out.println(testComparator.compare(radio1,radio2));
+        System.out.println();
+
+
+        //The anonym class usage.
+        Comparator<ElectronicDevices> testAnonym = new Comparator<>() {
+            @Override
+            public int compare(ElectronicDevices o1, ElectronicDevices o2) {
+                System.out.println(o1+ " is compared with "+ o2);
+                return Double.compare(o1.getWatt(), o2.getWatt());
+            }
+        };
+        System.out.println(testAnonym.compare(radio1,radio2));
 
 
 
