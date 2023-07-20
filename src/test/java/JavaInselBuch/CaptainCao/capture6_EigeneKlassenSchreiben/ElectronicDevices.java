@@ -38,7 +38,7 @@ public class ElectronicDevices {
 
     public void setWatt(int watt) throws IlegalWattException {
         if (watt <= 0){
-            throw new IlegalWattException();
+            throw new IlegalWattException("Die Watt anzahl ist %d und ungültig!",watt);
         }
         this.watt = watt;
     }

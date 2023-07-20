@@ -12,11 +12,13 @@ public class Test {
         radio.setModulation(FM);
         System.out.println(radio);
         try {
-            radio.setWatt(0);
+            radio.setWatt(-5);
         }catch (IlegalWattException e){
             System.out.println("Aufgefangen!");
+            System.out.println(e.getMessage());
         }finally {
             System.out.println("Weiter gehts!");
         }
+
     }
 }
