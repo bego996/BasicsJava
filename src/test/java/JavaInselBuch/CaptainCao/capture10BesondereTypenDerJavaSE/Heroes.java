@@ -75,39 +75,73 @@ public class Heroes {
                     new Universe("DC", DC), new Universe("Marvel", MARVEL)));
 
 
+    public static class YearComparator implements Comparator<Heroes.Hero> {
+        @Override
+        public int compare(Hero o1, Hero o2) {
+            return Integer.compare(o1.yearFirstAppearance, o2.yearFirstAppearance);
+        }
+    }
 
+    public static class NameComparator implements Comparator<Heroes.Hero> {
+        @Override
+        public int compare(Hero o1, Hero o2) {
+            return o1.name.compareTo(o2.name);
+        }
+    }
 
 
     public static void main(String[] args) {
         List<Hero> allHeros = new ArrayList<>(Heroes.ALL);
         allHeros.forEach(System.out::println);
         System.out.println();
-
+        /*
         //Interface Comparator mit einer lokalen klasse realisiert, in methoden möglich. Wenn erscheinungjahr der helden gleich, dann wird die länge des namen verglichen.
-        class HeroSorter implements Comparator<Hero> {
+        class HeroSorter implements Comparator<Heroes.Hero> {
             @Override
             public int compare(Hero o1, Hero o2) {
                 if (o1.yearFirstAppearance - o2.yearFirstAppearance != 0) {
                     return o1.yearFirstAppearance - o2.yearFirstAppearance;
-                }
-                else
+                } else
                     return o1.name.length() - o2.name.length();
             }
         }
-        //allHeros.sort(new HeroSorter());
-        //allHeros.forEach(System.out::println);
+        allHeros.sort(new HeroSorter());
+        allHeros.forEach(System.out::println);
 
 
         //Das beispiel wie oben nur diesmal mit einer anonymen klassen.
-        Comparator<Hero> comparator = (o1, o2) -> {
-            return o1.yearFirstAppearance-o2.yearFirstAppearance == 0 ? o1.name.length()-o2.name.length() : o1.yearFirstAppearance-o2.yearFirstAppearance;
+        Comparator<Heroes.Hero> comparator = (o1, o2) -> {
+            return Integer.compare(o1.yearFirstAppearance, o2.yearFirstAppearance) == 0 ? Integer.compare(o1.name.length(), o2.name.length()) : Integer.compare(o1.yearFirstAppearance, o2.yearFirstAppearance);
         };
         allHeros.sort(comparator);
         allHeros.forEach(System.out::println);
+        System.out.println();
 
-        //Das beispiel wie oben , nur diesmal mit einem lambda ausdruck.
+        //Comparator erstellt mit einem Lamda Ausdruck.
+        Comparator<Heroes.Hero> lamdaHeroes = (o1, o2) -> Integer.compare(o1.yearFirstAppearance, o2.yearFirstAppearance);
+
+        //Das beispiel wie oben, nur diesmal mit einem lambda ausdruck direkt in der Sort Methode.
         allHeros.sort((hero, hero2) -> hero.yearFirstAppearance - hero2.yearFirstAppearance);
         allHeros.forEach(System.out::println);
+
+        allHeros.sort(new YearComparator().thenComparing(new NameComparator()));
+        allHeros.forEach(System.out::println);
+        */
+
+
+        //Comparator mit keyExtraxtor (kurz).
+        Comparator<Heroes.Hero> namecomparator = Comparator.comparing((hero -> hero.name));
+        Comparator<Heroes.Hero> yearComparator = Comparator.comparingInt(hero -> hero.yearFirstAppearance);
+        Comparator<Heroes.Hero> combinedComparator = yearComparator.thenComparing(namecomparator);
+        Comparator<Heroes.Hero> combinedComparator2 = namecomparator.thenComparingInt(hero -> hero.yearFirstAppearance);
+        Comparator<Heroes.Hero> insensitiveCaseComparator = Comparator.comparing(hero -> hero.name,String.CASE_INSENSITIVE_ORDER);
+
+        allHeros.sort(combinedComparator);
+        allHeros.sort(combinedComparator2);
+        allHeros.sort(insensitiveCaseComparator);
+        allHeros.forEach(System.out::println);
+
+
 
     }
 }
