@@ -1,8 +1,12 @@
 package JavaInselBuch.CaptainCao.capture6_EigeneKlassenSchreiben;
 
+import JavaInselBuch.CaptainCao.capture10BesondereTypenDerJavaSE.Distances;
+
+import java.awt.*;
+
 public class TestDistance {
     public static void main(String[] args) {
-        Distance oneKm = Distance.ofMeter(1000);
+        /*Distance oneKm = Distance.ofMeter(1000);
         Distance someMeter = Distance.ofKilometer(2);
         System.out.println(someMeter.kilometer());
         System.out.println(someMeter.meter());
@@ -16,6 +20,7 @@ public class TestDistance {
 
         System.out.printf("2 km = %d km, %d m%n",someMeter.kilometer(),someMeter.meter());
         System.out.printf("1000 m = %d km, %d m%n",oneKm.kilometer(),oneKm.meter());
+        */
 
     }
 }
