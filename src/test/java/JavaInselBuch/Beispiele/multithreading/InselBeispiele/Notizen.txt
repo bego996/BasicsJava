@@ -1,0 +1,1 @@
+Wen der Thread einen fehler melden sollte , dann kann man actionListener nutzen oder mit Callable arbeiten.

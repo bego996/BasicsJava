@@ -8,7 +8,6 @@ public class capture4ArrayReverse {
         double[] numbers = {1,2,3,4,5};
         reverse(numbers);
         System.out.println(Arrays.toString(numbers));
-
     }
     public static void reverse(double[] numbers){
         for (int i = 0; i < numbers.length/2; i++) {
@@ -17,5 +16,4 @@ public class capture4ArrayReverse {
             numbers[numbers.length-1-i] = temp;
         }
     }
-
 }
